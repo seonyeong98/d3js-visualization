@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>D3</title>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <script>
+            //range() 변환 후 값
+            //domain() 변환 전 값
+            //scaleLinear 비율에 맞게 값을 변경해줌
+            const f1 = d3.scaleLinear().range([0,100]).domain([0,500]) //실제 값은 0~500까지인데 0~100으로 변환하겠다
+            console.log(f1(250)); //실제값이 250이면 변환후 값도 딱 반인 50
+            console.log(f1(0)); //0
+            console.log(f1(500)) //100
+            console.log(f1(100)) //20
+            console.log(f1(1000)) //200
+
+            crayons = d3.scaleLinear().domain([-1, 0, 1]).range(["orange", "white", "green"])
+            console.log(crayongs(0.3)) // RGB(179, 217, 179)
+
+            const f = d3.scaleLinear().range([200, 500]).domain([20000000, 50000000])
+            console.log(f(2500000000))
+        </script>
+    </body>
+
+</html>
